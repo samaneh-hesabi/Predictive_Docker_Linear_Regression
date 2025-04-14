@@ -4,7 +4,7 @@ This folder contains datasets used in the Docker Data Science project.
 
 ## Contents
 
-- `sample.csv`: A sample dataset containing mock data for experimentation and demonstration purposes. This file includes common data science features like numerical values, categorical data, and time-series information.
+- `iris.csv`: The famous Iris flower dataset for classification tasks. It contains measurements of sepal length, sepal width, petal length, petal width, and species classification for 150 iris flowers across three species (setosa, versicolor, and virginica).
 
 ## Usage
 

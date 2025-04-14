@@ -4,8 +4,8 @@ services:
       context: .
       args:
         - KERNEL_NAME=${PROJECT_NAME:-data-science-project}
-    image: ${PROJECT_NAME:-data-science-project}
-    container_name: ${PROJECT_NAME:-data-science-project}
+    image: ${PROJECT_NAME:-data-science-project}-image
+    container_name: ${PROJECT_NAME:-data-science-project}-container
     volumes:
       - .:/app
     stdin_open: true
