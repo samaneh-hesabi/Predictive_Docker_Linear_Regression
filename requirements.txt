@@ -1,7 +1,4 @@
-setuptools>=65.6.0
-wheel>=0.40.0
-jupyter>=1.0.0
-ipykernel>=6.0.0
-numpy>=1.25.2
-pandas>=2.0.3
-matplotlib>=3.7.1
+numpy
+pandas
+scikit-learn
+matplotlib

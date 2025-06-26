@@ -1,16 +1,21 @@
+version: '3.8'
+
 services:
-  data-science-project:
-    build:
-      context: .
-      args:
-        - KERNEL_NAME=${PROJECT_NAME:-data-science-project}
-    image: ${PROJECT_NAME:-data-science-project}-image
-    container_name: ${PROJECT_NAME:-data-science-project}-container
+  salary-predictor:
+    build: .
+    image: salary-predictor-image
+    container_name: salary-predictor-container
     volumes:
       - .:/app
+      - ./models:/app/models
+      - ./logs:/app/logs
     stdin_open: true
     tty: true
     ports:
-      - "8888:8888" # Jupyter Notebook
+      - "${JUPYTER_PORT:-8888}:${JUPYTER_PORT:-8888}" # Jupyter Notebook
     environment:
-      - KERNEL_NAME=${PROJECT_NAME:-data-science-project}
+      - PYTHONPATH=/app
+      - JUPYTER_PORT=${JUPYTER_PORT:-8888}
+    # Override the default entrypoint to keep the container running
+    # for development purposes
+    entrypoint: ["tail", "-f", "/dev/null"]
